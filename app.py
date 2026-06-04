@@ -24,6 +24,6 @@ if st.button("Predict Price"):
          TAX, PTRATIO, B, LSTAT]
     ])
 
-    prediction = model.predict(features)
+    prediction = max(0, model.predict(features)[0])
 
-    st.success(f"Predicted House Price: ${prediction[0]:.2f}K")
+    st.success(f"🏠 Predicted House Price: ${prediction:.2f}K")
